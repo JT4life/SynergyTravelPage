@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1 align="center">Please Log In Below</h1>
+<hr>
+<form action="login" method="post">
+    {% csrf_token %}
+<!--    csrf token is required for post but not get-->
+    Username: <input type="text" name="username" placeholder="Enter Username"><br>
+    Password: <input type="password" name="password1" placeholder="Enter your password"><br>
+    <input type="submit" value="submit"><br>
+</form>
+<hr>
+<div>
+<!--    call messages from views.py-->
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</div>
+</body>
+</html>
